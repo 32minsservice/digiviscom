@@ -40,10 +40,10 @@
         <section id="region-main" class="col-12 h-100" aria-label="{{#str}}content{{/str}}">
         <div class="login-wrapper">
             <div class="login-container">
-                <div class="loginform-toggle">
-                    <h2 class="login-heading lambda-toggle">{{#str}}liketologin{{/str}}</h2>
-                </div>
                 {{{ output.main_content }}}
+				<div class="loginform-toggle">
+                    <h2 class="login-heading lambda-toggle mt-4">{{#str}}liketologin{{/str}}</h2>
+                </div>
             </div>
         </div>
         </section>
@@ -53,6 +53,10 @@
 </body>
 </html>
 {{#js}}
+{{#has_bg_slider}}
+const element = document.getElementById('login_bg_slider');
+UIkit.slideshow(element).startAutoplay();
+{{/has_bg_slider}}
 M.util.js_pending('theme_boost/loader');
 require(['theme_boost/loader'], function() {
   M.util.js_complete('theme_boost/loader');

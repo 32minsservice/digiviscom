@@ -85,13 +85,29 @@
         }
     });
 
-    if ($('body').hasClass('m-40') || $('body').hasClass('m-41')) {
-        cbinittype();
-    }
+    check_activity_header();
 
 	});
 }) (jQuery);
 
+function check_activity_header() {
+    if (!document.body.classList.contains("path-mod")) {
+        return;
+    }
+    const activityHeader = document.querySelector(".activity-header");
+    if (!activityHeader) return;
+    const activityInfo = activityHeader.querySelector(".activity-information");
+    if (!activityInfo) return;
+    const hasBadgeOrButton = activityInfo.querySelector(".badge, .btn.btn-sm");
+    if (hasBadgeOrButton) {
+        activityInfo.classList.add("has-content");
+    }
+    const description = activityHeader.querySelector(".activity-description");
+    const nestedHasContent = activityHeader.querySelector(".activity-information.has-content");
+    if (description || nestedHasContent) {
+        activityHeader.classList.add("has-content");
+    }
+}
 function cbinittype() {    
     var selectElement = document.querySelector('select[name="config_block_type"]');
     if (selectElement) {
@@ -108,7 +124,7 @@ function cbchangetype(event) {
     var selectedValue = selectElement.value;
     selectElement.form.setAttribute('data-form-type', selectedValue);
 }
-function cbchangecolor() {    
+function cbchangecolor() {
     var colorInput = document.getElementById('favcolor');
     var textInput = document.querySelector('input[id^="id_config_block_bgcolor"]');
     textInput.value = colorInput.value;

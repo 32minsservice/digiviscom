@@ -79,6 +79,32 @@ Bootstrap 2.3 Components
     border-bottom: 2px solid $maincolor;
     color: #333 !important;
 }
+#region-main .tabbable.tabs-left {
+    display: flex;
+}
+#region-main .tabbable.tabs-left .nav-tabs {
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid $maincolor;
+}
+#region-main .tabbable.tabs-left .nav-tabs li a, .tabbable.tabs-left .nav-tabs:before {
+    border-bottom: none !important;
+}
+#region-main .tabbable.tabs-left .nav.nav-tabs li a[data-toggle="tab"]:hover {
+    background: #eee;
+}
+#region-main .tabbable.tabs-left .nav.nav-tabs li a[data-toggle="tab"] {
+    color: $body_color !important;
+    border-radius: 4px 0 0 4px;
+}
+#region-main .tabbable.tabs-left .nav.nav-tabs li a[data-toggle="tab"].active {
+    background: $maincolor;
+    color: #fff !important;
+}
+#region-main .tabbable.tabs-left:not([id]) .nav.nav-tabs li.active a[data-toggle="tab"] {
+    background: $maincolor;
+    color: #fff !important;
+}
 
 /*================================================== * 
 Bootstrap 2.3 Grid

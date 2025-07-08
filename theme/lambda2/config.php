@@ -43,6 +43,9 @@ array_push($add_block_pos, 'main-top', 'main-bottom');
 $fp_block_pos = $add_block_pos;
 array_push($fp_block_pos, 'admin-only');
 
+$footerscripts = array('scripts');
+if ($THEME->settings->bs4converter) {array_push($footerscripts, 'bsconvert');}
+
 $THEME->layouts = [
     'base' => array(
         'file' => 'default.php',
@@ -139,7 +142,7 @@ $THEME->layouts = [
 ];
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
 $THEME->javascripts = array('theme-uikit');
-$THEME->javascripts_footer = array('scripts');
+$THEME->javascripts_footer = $footerscripts;
 $THEME->enable_dock = false;
 $THEME->prescsscallback = 'theme_lambda2_get_pre_scss';
 $THEME->extrascsscallback = 'theme_lambda2_get_extra_scss';

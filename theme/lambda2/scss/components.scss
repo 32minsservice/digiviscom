@@ -225,7 +225,7 @@ div[class^="col-"] .iconbox {
     position: absolute;
     width: 98%;
     width: -webkit-fill-available;
-    bottom: 1rem;
+    bottom: .15rem;
 }
 .info-box {
     margin: 20px 10px;
@@ -249,7 +249,7 @@ div[class^="col-"] .iconbox {
     font-size: 2rem;
 }
 .info-box > .icon-circle:before {
-    font-family: $fontawesome;
+    font-family: "Font Awesome 6 Free";
     font-weight: 700;
 }
 .info-box > .info-body {
@@ -355,14 +355,48 @@ div[class^="col-"] .iconbox {
     margin: 10px 5px;
 }
 .cardsfx.boxshadow {
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16);
+    box-shadow: 0 .15rem .25rem rgba(0, 0, 0, .075);
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+.cardsfx.fxshadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+.cardsfx.fxshadow {
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .2) !important;
+    border: 1px solid rgba(0, 0, 0, .125);
 }
 .cardsfx.hover {
-    transition: transform 0.25s;
+    transition: all ease-in-out 0.25s;
 }
-.cardsfx.hover:hover, .cardsfx.hover:focus {
+.cardsfx.hover.hover-main-bg, .cardsfx.hover.hover-main-bg .content img, .cardsfx.hover.hover-main-bg .content svg {
+    transition: all ease-in-out 0.4s;
+}
+.cardsfx.hover:not(.hover-main-bg):hover, .cardsfx.hover:not(.hover-main-bg):focus,
+.cardsfx.hover:not(.hover-scale):hover, .cardsfx.hover:not(.hover-scale):focus,
+.cardsfx.hover.hover-shadow:hover, .cardsfx.hover.hover-shadow:focus,
+.cardsfx.boxshadow.hover:hover, .cardsfx.boxshadow.hover:focus {
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .125);
+}
+.cardsfx.fxshadow-sm.hover.hover-shadow:hover, .cardsfx.fxshadow.hover.hover-shadow:hover,
+.cardsfx.fxshadow-sm.hover.hover-shadow:focus, .cardsfx.fxshadow.hover.hover-shadow:focus {
+    box-shadow: 0 .5rem .75rem rgb(0 0 0 / .125) !important;
+}
+.cardsfx.hover.hover-main-bg:hover, .cardsfx.hover.hover-main-bg:focus {
+    background-color: $maincolor !important;
+    color: #fff !important;
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff !important;
+    }
+    .content img {
+        filter: invert(1) brightness(2);
+    }
+    .content svg {
+        fill: #fff;
+    }
+}
+.cardsfx.hover.hover-scale:hover, .cardsfx.hover.hover-scale:focus {
     transform: scale3d(1.006, 1.006, 1);
-    box-shadow: 0 4px 7px 0 rgba(0,0,0,.16);
 }
 .cardsfx.hover:hover::after, .cardsfx.hover:focus::after {
     opacity: 1;
@@ -375,37 +409,33 @@ div[class^="col-"] .iconbox {
 /*------------------------------------
 Bootstrap Components
 ------------------------------------*/
-.alert .close {
-    box-shadow: none;
-    margin: 0;
-    border-radius: 50%;
-    width: 25px;
-    line-height: 25px;
-    text-shadow: none;
-    font-size: 1.5rem;
-    font-weight: 300;
+.alert {
+    border-radius: .25rem;
+    .btn-close {
+        color: inherit;
+        opacity: .5;
+        font-size: .75rem;
+        padding: 1.5rem 1rem;
+        transition: all .25s ease-in;
+    }
+    .btn-close:hover {
+        opacity: 1;
+    }
 }
-.alert-dismissible .close {
-    position: absolute;
-    top: .5rem;
-    right: .5rem;
-    z-index: 2;
-    padding: 0;
+.alert.alert-secondary {
+    border-color: #d6d8db;
 }
-.alert .close:hover {
-    background: rgba(0,0,0,0.25);
+.alert.alert-success {
+    border-color: #c3e6cb;
 }
-.alert.alert-info .close:hover {
-    background: rgb(59 178 203 / 50%);
+.alert.alert-danger {
+    border-color: #f5c6cb;
 }
-.alert.alert-danger .close:hover {
-    background: rgb(203 59 59 / 50%);
+.alert.alert-warning {
+    border-color: #ffeeba;
 }
-.alert.alert-warning .close:hover {
-    background: rgb(203 186 59 / 50%);
-}
-.alert.alert-success .close:hover {
-    background: rgb(115 188 133 / 50%);
+.alert.alert-info {
+    border-color: #bee5eb;
 }
 .nav.nav-tabs {
     height: auto;
@@ -576,7 +606,7 @@ ul.nav.nav-pills {
     margin: 0 !important;
     padding: 0.25rem 0 !important;
 }
-.accordion>.card>.card-header button[data-toggle="collapse"] {
+.accordion>.card>.card-header button[data-bs-toggle="collapse"] {
     color: #444;
     text-decoration: none!important;
     background-color: #f2f2f2 !important;
@@ -588,7 +618,7 @@ ul.nav.nav-pills {
     font-size: 1rem !important;
     margin: 0;
 }
-.accordion>.card>.card-header button[data-toggle="collapse"]:hover, .accordion>.card>.card-header button[aria-expanded="true"] {
+.accordion>.card>.card-header button[data-bs-toggle="collapse"]:hover, .accordion>.card>.card-header button[aria-expanded="true"] {
     background-color: $maincolor !important;
     color: #fff !important;
 }
@@ -631,7 +661,7 @@ ul.nav.nav-pills {
 }
 .accordion.lambda.style-01 .card .card-header .btn-header-link:after {
     content: "\f106";
-    font-family: $fontawesome;
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     float: right;
     transform: rotate(0);
@@ -672,7 +702,7 @@ ul.nav.nav-pills {
 }
 .accordion.lambda.style-02 .card .card-header .btn-header-link:after {
     content: "\f106";
-    font-family: $fontawesome;
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     float: right;
     transform: rotate(0);
@@ -683,6 +713,33 @@ ul.nav.nav-pills {
 }
 .accordion.lambda.style-02 .card .card-header .btn-header-link:hover, .accordion.lambda.style-02 .card .card-header .btn-header-link[aria-expanded="true"] {
     color: $maincolor;
+}
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+}
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 4rem 2rem;
+    }
+}
+
+/*------------------------------------
+Bootstrap 5
+------------------------------------*/
+.accordion .accordion-item .accordion-button {
+    line-height: 1.5rem;
+    box-shadow: none !important;
+}
+.accordion .accordion-item .accordion-button:not(.collapsed) {
+    border-bottom: 1px solid #dee2e6;
+}
+.activity-altcontent .dropdown > .dropdown-menu.show {
+    position: relative !important;
+    transform: translate(6px, 1px) !important;
+    margin-bottom: 1rem !important;
 }
 
 /*------------------------------------
@@ -743,12 +800,13 @@ Lambda content plugins
 }
 .link-button.btn-link {
     font-size: 1.08rem;
+    text-decoration: none !important;
 }
 .link-button.btn-link:hover {
     text-decoration: none !important;
 }
 .link-button.btn-link a:hover:after {
-    font-family: $fontawesome;
+    font-family: "Font Awesome 6 Free";
     content: "\f101";
     font-weight: 700;
     margin-left: 0.5rem;

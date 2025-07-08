@@ -17,7 +17,7 @@
 /**
  *
  * @package   theme_lambda2
- * @copyright 2024 redPIthemes
+ * @copyright 2025 redPIthemes
  *
  */
 
@@ -40,4 +40,3 @@ $templatecontext = [
 ];
 
 echo $OUTPUT->render_from_template('theme_lambda2/secure', $templatecontext);
-

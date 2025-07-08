@@ -17,7 +17,7 @@
 /**
  *
  * @package   theme_lambda2
- * @copyright 2024 redPIthemes
+ * @copyright 2025 redPIthemes
  *
  */
 

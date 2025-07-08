@@ -17,7 +17,7 @@
 /**
  *
  * @package   theme_lambda2
- * @copyright 2024 redPIthemes
+ * @copyright 2025 redPIthemes
  *
  */
 
@@ -260,11 +260,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
 		global $CFG;
 		$content = '<li class="nav-item"><a class="nav-link" href="'.$CFG->wwwroot.'/?redirect=0">'.get_string('home').'</a></li>';	
 		if ($CFG->enabledashboard) {
-			if (isloggedin() || (isguestuser() && $CFG->allowguestmymoodle)) {
+			if ((isloggedin() && !isguestuser()) || (isguestuser() && $CFG->allowguestmymoodle)) {
 				$content .= '<li class="nav-item"><a class="nav-link" href="'.$CFG->wwwroot.'/my/">'.get_string('myhome').'</a></li>';
 			}
 		}
-		if (isloggedin()) {
+		if (isloggedin() && !isguestuser()) {
 			$content .= '<li class="nav-item"><a class="nav-link" href="'.$CFG->wwwroot.'/my/courses.php">'.get_string('mycourses').'</a></li>';
 		}
 		if (is_siteadmin()) {
@@ -711,7 +711,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
 		$content = '';
         if ($has_img_1 || $has_img_2 || $has_img_3 || $has_img_4) {
-            $content = '<div uk-slideshow="animation: fade;autoplay: true; autoplay-interval: '.$time.'" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%;">';
+            $content = '<div id="login_bg_slider" uk-slideshow="animation: fade;autoplay: true; autoplay-interval: '.$time.'" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%;" class="uk-visible-toggle-custom" tabindex="-1">';
 			$content .= '<ul class="uk-slideshow-items" style="height: 100vh;">';
 			if ($has_img_1) {
 				$content .= '<li><img src="'.$theme->setting_file_url('login_bg_img_1', 'login_bg_img_1').'" alt="" uk-cover></li>';
@@ -875,7 +875,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 	function theme_lambda2_search_courses() {
 		global $CFG;
 		$content = '<div class="simplesearchform px-4">
-		<form autocomplete="off" action="'.$CFG->wwwroot.'/course/management.php" method="get" accept-charset="utf-8" class="mform simplesearchform pt-3">
+		<form autocomplete="off" action="'.$CFG->wwwroot.'/course/search.php" method="get" accept-charset="utf-8" class="mform simplesearchform pt-3">
 		<div class="input-group">
 			<label for="searchinput-aside">
 				<span class="sr-only">Search courses</span>

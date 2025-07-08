@@ -30,6 +30,13 @@
   $light:         $gray-100;
   $dark:          $gray-900;
 
+  $activity-icon-administration-bg: #da58ef;
+  $activity-icon-assessment-bg: #f90086;
+  $activity-icon-collaboration-bg: #5b40ff;
+  $activity-icon-communication-bg: #eb6200;
+  $activity-icon-content-bg: #0099ad;
+  $activity-icon-interactivecontent-bg: #8d3d1b;
+
 /*------------------------------------
   Default settings
   ------------------------------------ */
@@ -43,7 +50,6 @@
   $font_body:     "[[setting:font_body]]";
   $font_heading:  "[[setting:font_heading]]";
   $headingweight: [[setting:headingweight]];
-  $fontawesome:   [[setting:fontawesome]];
   
   [[setting:fontface]]
 

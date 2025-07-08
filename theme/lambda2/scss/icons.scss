@@ -174,14 +174,7 @@ i.lambda:before {
 /*------------------------------------
   FA & Linearicons links
 ------------------------------------*/
-.lambda-fa-link {
-  display: none;
-}
-.m-40 .lambda-fa-link.fa-v4, .m-41 .lambda-fa-link.fa-v4, .m-42 .lambda-fa-link.fa-v6, .m-43 .lambda-fa-link.fa-v6, .m-44 .lambda-fa-link.fa-v6, .m-45 .lambda-fa-link.fa-v6,
-.m-40 .lambda-fa-link.m-40, .m-41 .lambda-fa-link.m-41, .m-42 .lambda-fa-link.m-42, .m-43 .lambda-fa-link.m-43, .m-44 .lambda-fa-link.m-44, .m-45 .lambda-fa-link.m-44 {
-  display: inline;
-}
-.lambda-fa-link {
+.lambda-fa-link.fa-v4 {
   display: none;
 }
 .lambda-lnr-link {
@@ -656,7 +649,7 @@ a.social.fa-youtube-square {
   Toggle sections
 ------------------------------------*/
 #adminsettings h3.lambda-toggle::before, .lambda-login h2.lambda-toggle::before {
-  font-family: $fontawesome;
+  font-family: "Font Awesome 6 Free";
   content: "\f107";
   font-size: 1.5rem;
   font-weight: 900;

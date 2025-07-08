@@ -17,7 +17,7 @@
 /**
  *
  * @package   theme_lambda2
- * @copyright 2024 redPIthemes
+ * @copyright 2025 redPIthemes
  *
  */
 
@@ -90,8 +90,7 @@ $string['activity_icons_4'] = 'main background color with dark icons';
 $string['activity_icons_5'] = 'main background color with bright icons';
 $string['activity_icons_6'] = 'secondary background color with dark icons';
 $string['activity_icons_7'] = 'secondary background color with bright icons';
-$string['activity_icons_8'] = 'icons with contextual background color (Moodle 4.0 - 4.3)';
-$string['activity_icons_9'] = 'icons with contextual line color (Moodle 4.4)';
+$string['activity_icons_8'] = 'icons with contextual background color (Moodle 4)';
 $string['back_to_course'] = 'Back To Course Button';
 $string['back_to_course_desc'] = 'Show a <em>Back to course</em> button at the bottom of a course activity or resource.';
 $string['course_enrolment_settingssection'] = '<div style="border-bottom: 1px solid #e5e5e5; margin-bottom: 1rem;"><span style="font-size:1.25em;">Course Enrolment Page</span><br>To enable the course enrolment pages, you have to change the user policies so that visitors automatically get a guest role.<br><a href="/admin/settings.php?section=userpolicies#admin-autologinguests" target="_blank"><i class="fa fas fa-angle-double-right" aria-hidden="true"></i> Click here to access the <em>User policies</em> settings page</a> and tick the box for <em>Auto-login guests</em> there.<br><br></div>';
@@ -374,7 +373,7 @@ $string['socials_monochrome'] = 'Monochrome Icons';
 $string['socials_monochrome_desc'] = 'By default, the icons defined in the following section are given a colored background according to the brand. Here you can choose to show all icons with a monochrome color. In this case, the color from the section "Social Icon Links" will be used.';
 $string['iconlinks'] = 'Additional Icon Links';
 $string['socials_link_icon'] = 'Additional Link Icon';
-$string['socials_link_icon_desc'] = 'Define an optional icon for the additional link. To select an icon, please visit the <a class="lambda-fa-link fa-v4" href="https://fontawesome.com/v4/icons/" target="_blank">Font Awesome website</a><a class="lambda-fa-link fa-v6" href="https://fontawesome.com/search?o=r&m=free" target="_blank">Font Awesome website</a>.';
+$string['socials_link_icon_desc'] = 'Define an optional icon for the additional link. To select an icon, please visit the <a class="lambda-fa-link fa-v6" href="https://fontawesome.com/search?o=r&m=free" target="_blank">Font Awesome website</a>.';
 $string['socials_link_text'] = 'Additional Link Text';
 $string['socials_link_text_desc'] = 'Enter the link text for your hyperlink';
 $string['socials_link_url'] = 'Social Icon URL';
@@ -434,6 +433,8 @@ $string['rawscsspre'] = 'Raw initial SCSS';
 $string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS code, it will be injected before everything else. Most of the time you will use this setting to define variables.';
 $string['customscss'] = 'Custom SCSS';
 $string['customscssdesc'] = 'Whatever SCSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
+$string['bs4converter'] = 'Bootstrap 4 to Bootstrap 5 Converter';
+$string['bs4converter_desc'] = 'Moodle 5 is based on the Bootstrap 5 framework. By selecting the checkbox,  you can automatically convert a large number of Bootstrap 4 classes and data attributes to their Bootstrap 5 counterparts. If you have already created content under Moodle 4 with the Lambda Content Editor plugin or have manually created components based on Bootstrap 4, this option is useful.';
 
 /* Theme */
 $string['visibleadminonly'] ='Blocks moved into the area below will only be seen by admins';

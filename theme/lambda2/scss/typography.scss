@@ -60,8 +60,9 @@ img {
     max-width: 100%;
     height: auto;
 }
-a {
+a, a.btn-link, .btn.btn-link a, .btn.btn-link {
     transition: 0.2s ease-out;
+    text-decoration: none;
 }
 a:hover {
     color: $body_color;
@@ -92,6 +93,12 @@ code {
 }
 .maincolor{
     color: $maincolor;
+}
+.bg-main {
+    background-color: $maincolor;
+}
+.bg-main-light {
+    background-color: rgba($maincolor, .14);
 }
 .plus {
 	font-size:1.05em;
@@ -151,25 +158,25 @@ code {
 HTML-Elements
 ------------------------------------*/
 blockquote::before {
-    color: #c1c1c1;
+    color: #adb5bd;
     content: "\f10e";
     position: absolute;
-    font-family: $fontawesome;
+    font-family: "Font Awesome 6 Free";
     font-weight: 700;
-    font-size: 3.5em;
-    margin: 0 8px;
-    opacity: .25;
+    font-size: 20px;
+    margin: 0;
+    opacity: .35;
 }
-blockquote footer:before, blockquote small:before, blockquote .small:before {
+blockquote footer:before {
     content: "- ";
 }
 blockquote p, blockquote footer {
     padding-left: 2rem;
 }
-blockquote footer {
+blockquote footer, .blockquote-footer {
 	color:#777;
     font-size: .9rem;
-    margin-top: 0.75rem;
+    margin-top: 0.75rem !important;
 }
 .fa-ul {
 	list-style-type: none !important;
@@ -184,7 +191,7 @@ ul.list-style-1 li, ul.list-style-2 li, ul.list-style-3 li {
     list-style: none outside none;
 }
 ul.list-style-1 li::before, ul.list-style-2 li::before, ul.list-style-3 li::before {
-    font-family: $fontawesome;
+    font-family: "Font Awesome 6 Free";
     display: inline-block;
     margin: 0 0 0 -18px;
     padding-right: 6px;
@@ -422,21 +429,24 @@ Bootstrap Elements
 .badge.bg-secondary.text-dark {
     background-color: rgb(222 226 230) !important;
 }
-.badge.badge-info, .badge.bg-info {
+.badge.badge-info, .badge.bg-info, .badge.text-bg-info {
     color: #356df1 !important;
     background-color: #d6e6fb !important;
 }
-.badge.badge-warning {
+.badge.badge-warning, .badge.text-bg-warning {
     color: #ff971a;
     background-color: #fff3cd;
 }
-.badge.badge-danger, .badge.bg-danger {
+.badge.badge-danger, .badge.bg-danger, .badge.text-bg-danger {
     color: #dc3545 !important;
     background-color: #f8d7da !important;
 }
-.badge.badge-success, .badge.bg-success {
+.badge.badge-success, .badge.bg-success, .badge.text-bg-success {
     color: #28a745 !important;
     background-color: #d4edda !important;
+}
+.badge.badge-primary, .badge.text-bg-primary {
+    color: #fff !important;
 }
 .nav.nav-tabs {
     list-style: none !important;

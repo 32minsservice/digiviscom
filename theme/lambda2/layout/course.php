@@ -17,7 +17,7 @@
 /**
  *
  * @package   theme_lambda2
- * @copyright 2024 redPIthemes
+ * @copyright 2025 redPIthemes
  *
  */
 
@@ -33,12 +33,6 @@ $addblockbutton_footerleft = $OUTPUT->addblockbutton('footer-left');
 $addblockbutton_footerright = $OUTPUT->addblockbutton('footer-right');
 $addblockbutton_footermiddle = $OUTPUT->addblockbutton('footer-middle');
 $addblockbutton_footermiddle2 = $OUTPUT->addblockbutton('footer-middle-2');
-
-if ((theme_lambda2_get_moodle_version() == 'm-40') || (theme_lambda2_get_moodle_version() == 'm-41') || (theme_lambda2_get_moodle_version() == 'm-42')) {
-    user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
-    user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
-    user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
-}
 
 if (isloggedin()) {
     $courseindexopen = (get_user_preferences('drawer-open-index', true) == true);

@@ -17,7 +17,7 @@
 /**
  *
  * @package   theme_lambda2
- * @copyright 2024 redPIthemes
+ * @copyright 2025 redPIthemes
  *
  */
 
@@ -262,6 +262,9 @@ function theme_lambda2_get_extra_scss($theme) {
         }
     }
 
+    $infotxt = get_string('info');
+    $xscss .= '.path-mod #page-content .activity-header.has-content:before {content: "'.$infotxt.'";}';
+
     $home_button = $theme->settings->home_button;
     $shortsitename = format_string($SITE->shortname);
     if ($home_button == 1) {
@@ -279,23 +282,19 @@ function theme_lambda2_get_extra_scss($theme) {
         $xscss .= '.activityiconcontainer {background-color: transparent !important; padding: 0; width: 24px !important; height: 24px !important;} .activityiconcontainer img.activityicon {filter: none !important;} .activityiconcontainer img.activityicon[title="H5P"] {filter: brightness(0.05);} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;}';
     }
     if ($activity_icons == 3) {
-        $xscss .= '.activityiconcontainer {background-color: '.$theme->settings->maincolor.' !important;} .activityiconcontainer img.activityicon {filter: none !important;} .activityiconcontainer img.activityicon[title="H5P"] {filter: brightness(0.05);} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;} .activity-item .activity-grid .activityiconcontainer {margin-right: 16px !important;} .activity-item .activityiconcontainer {width: 24px !important; height: 24px !important; min-width: 24px !important;} .page-context-header .activityiconcontainer {width: 26px !important; height: 26px !important; min-width: 26px !important;}';
+        $xscss .= '.activityiconcontainer {background-color: '.$theme->settings->maincolor.' !important;} .activityiconcontainer img.activityicon {filter: none !important;} .activityiconcontainer.isbranded img.activityicon {filter: brightness(0.05);} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;} .activity-item .activity-grid .activityiconcontainer {margin-right: 16px !important;} .activity-item .activityiconcontainer {width: 24px !important; height: 24px !important; min-width: 24px !important;} .page-context-header .activityiconcontainer {width: 26px !important; height: 26px !important; min-width: 26px !important;}';
     }
     if ($activity_icons == 4) {
         $xscss .= '.activityiconcontainer {background-color: '.$theme->settings->maincolor.' !important;} .activityiconcontainer img.activityicon {filter: brightness(0) invert(1) !important;} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;} .activity-item .activity-grid .activityiconcontainer {margin-right: 14px !important;} .activity-item .activityiconcontainer {width: 28px !important; height: 28px !important; min-width: 28px !important;} .page-context-header .activityiconcontainer {width: 34px !important; height: 34px !important; min-width: 34px !important;}';
     }
     if ($activity_icons == 5) {
-        $xscss .= '.activityiconcontainer {background-color: '.$theme->settings->secondcolor.' !important;} .activityiconcontainer img.activityicon {filter: none !important;} .activityiconcontainer img.activityicon[title="H5P"] {filter: brightness(0.05);} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;} .activity-item .activity-grid .activityiconcontainer {margin-right: 16px !important;} .activity-item .activityiconcontainer {width: 24px !important; height: 24px !important; min-width: 24px !important;} .page-context-header .activityiconcontainer {width: 26px !important; height: 26px !important; min-width: 26px !important;}';
+        $xscss .= '.activityiconcontainer {background-color: '.$theme->settings->secondcolor.' !important;} .activityiconcontainer img.activityicon {filter: none !important;} .activityiconcontainer.isbranded img.activityicon {filter: brightness(0.05);} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;} .activity-item .activity-grid .activityiconcontainer {margin-right: 16px !important;} .activity-item .activityiconcontainer {width: 24px !important; height: 24px !important; min-width: 24px !important;} .page-context-header .activityiconcontainer {width: 26px !important; height: 26px !important; min-width: 26px !important;}';
     }
     if ($activity_icons == 6) {
         $xscss .= '.activityiconcontainer {background-color: '.$theme->settings->secondcolor.' !important;} .activityiconcontainer img.activityicon {filter: brightness(0) invert(1) !important;} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;} .activity-item .activity-grid .activityiconcontainer {margin-right: 14px !important;} .activity-item .activityiconcontainer {width: 28px !important; height: 28px !important; min-width: 28px !important;} .page-context-header .activityiconcontainer {width: 34px !important; height: 34px !important; min-width: 34px !important;}';
     }
     if ($activity_icons == 7) {
-        if ($CFG->version >= 2024042200) {
-            $xscss .= '.activityiconcontainer:not(.isbranded) .activityicon:not(.nofilter) {filter: brightness(0) invert(1) !important;} .activityiconcontainer.smaller {width: 40px; height: 40px; max-width: 40px; max-height: 40px;} .activityiconcontainer.isbranded {background-color: #d4d4d4 !important;} .activityiconcontainer.assessment {background-color: #eb66a2;} .activityiconcontainer.content, .activityiconcontainer.interactivecontent {background-color: #399be2;} .activityiconcontainer.communication {background-color: #11a676;} .activityiconcontainer.collaboration {background-color: #f7634d;}';
-        } else {
-            $xscss .= '.activityiconcontainer {background-color: transparent !important; padding: 0; width: 24px !important; height: 24px !important;} .text-uppercase.small {display: none;} .pagelayout-incourse .page-context-header {align-items: center;} .pagelayout-incourse .page-context-header .page-header-image {display: flex;} .activity-item .activity-grid {align-items: baseline !important;} .activityiconcontainer.assessment:not(.isbranded) .activityicon:not(.nofilter) {filter: invert(36%) sepia(98%) saturate(6969%) hue-rotate(315deg) brightness(90%) contrast(119%);} .activityiconcontainer.content:not(.isbranded) .activityicon:not(.nofilter) {filter: invert(49%) sepia(52%) saturate(4675%) hue-rotate(156deg) brightness(89%) contrast(102%);} .activityiconcontainer.communication:not(.isbranded) .activityicon:not(.nofilter) {filter: invert(48%) sepia(74%) saturate(4887%) hue-rotate(11deg) brightness(102%) contrast(101%);} .activityiconcontainer.collaboration:not(.isbranded) .activityicon:not(.nofilter) {filter: invert(25%) sepia(54%) saturate(6226%) hue-rotate(245deg) brightness(100%) contrast(102%);}';
-        }        
+        $xscss .= '.activityiconcontainer:not(.isbranded) .activityicon:not(.nofilter) {filter: brightness(0) invert(1) !important;} .activityiconcontainer.smaller {width: 40px; height: 40px; max-width: 40px; max-height: 40px;} .activityiconcontainer.smaller img.activityicon {width: 30px; height: auto;} .activityiconcontainer.isbranded {background-color: #d4d4d4 !important;} .activityiconcontainer.assessment {background-color: #eb66a2;} .activityiconcontainer.content, .activityiconcontainer.interactivecontent {background-color: #399be2;} .activityiconcontainer.communication {background-color: #11a676;} .activityiconcontainer.collaboration {background-color: #f7634d;}';       
     }
 
     $category_layout = $theme->settings->category_layout;
@@ -307,7 +306,7 @@ function theme_lambda2_get_extra_scss($theme) {
 
     if ($dashboard_layout > 0) {
         $xscss .= '.pagelayout-mydashboard #block-region-content {column-count: 2; column-gap: 2rem; margin: 1rem; padding: 0;}';
-        $xscss .= '.pagelayout-mydashboard #block-region-content section.block {display: inline-block; width: 100%;}';
+        $xscss .= '.pagelayout-mydashboard #block-region-content section.block {display: flex; width: 100%;}';
 	}
     if ($dashboard_layout == 2) {
         $xscss .= '.pagelayout-mydashboard #block-region-content section.block:first-of-type {display: block; width: 100%; column-span: all;}';
@@ -321,6 +320,7 @@ function theme_lambda2_get_extra_scss($theme) {
         $xscss .= '#page-my-index.pagelayout-mydashboard #page-header.header-maxwidth {background-image: url("'.$dashboard_banner_img.'"); background-size: cover; background-position-y: 50%; border-radius: 4px; min-height: '.$theme->settings->banner_height.'; position: relative; margin-top: 1.5rem; margin-bottom: 1.5rem;}';
         $xscss .= '#page-my-index.pagelayout-mydashboard #page-header h1.h2 {color: #fff; padding: .75rem 1.5rem !important; font-weight: 400 !important; background: '.$theme->settings->maincolor.'; border-radius: .2rem; line-height: 1; position: absolute; bottom: 2rem; left: 2rem;}';
         $xscss .= '#page-my-index.pagelayout-mydashboard #page-header h1.h2, #page-my-index.pagelayout-mydashboard #page-header h1.h2.mb-3.mt-3 {margin-top: 0 !important; margin-bottom: 0 !important;}';
+        $xscss .= '#page-my-index.pagelayout-mydashboard.page-header-style-02 #lambda-page-header #page-header .w-100 {justify-content: end !important;} #page-my-index.pagelayout-mydashboard.editing #lambda-page-header #page-header .singlebutton {margin: .5rem;}' ;
     }
 
     if (!is_null($theme->setting_file_url('mycourses_banner_img', 'mycourses_banner_img'))) {
@@ -328,6 +328,7 @@ function theme_lambda2_get_extra_scss($theme) {
         $xscss .= '#page-my-index.pagelayout-mycourses #page-header.header-maxwidth {background-image: url("'.$mycourses_banner_img.'"); background-size: cover; background-position-y: 50%; border-radius: 4px; min-height: '.$theme->settings->banner_height.'; position: relative; margin-top: 1.5rem; margin-bottom: 1.5rem;}';
         $xscss .= '#page-my-index.pagelayout-mycourses #page-header h1.h2 {color: #fff; padding: .75rem 1.5rem !important; font-weight: 400 !important; background: '.$theme->settings->maincolor.'; border-radius: .2rem; line-height: 1; position: absolute; bottom: 2rem; left: 2rem;}';
         $xscss .= '#page-my-index.pagelayout-mycourses #page-header h1.h2, #page-my-index.pagelayout-mycourses #page-header h1.h2.mb-3.mt-3 {margin-top: 0 !important; margin-bottom: 0 !important;}';
+        $xscss .= '#page-my-index.pagelayout-mycourses #page-header .d-flex.align-items-center {margin: .5rem 1rem;} #page-my-index.pagelayout-mycourses.page-header-style-02 #lambda-page-header #page-header .w-100 {display: flex; justify-content: end !important;}';
     }
 
     $login_bg_type = $theme->settings->login_bg_type;
@@ -336,7 +337,7 @@ function theme_lambda2_get_extra_scss($theme) {
 		$loginbgimg = $theme->setting_file_url('login_bg_img_1', 'login_bg_img_1');
 		$repeat = $theme->settings->login_bg_repeat;
         $xscss .= '.pagelayout-login.lambda-login.bg-img #page {background: url("'.$loginbgimg.'")';
-        if ($repeat == 0) {$xscss .= ' no-repeat 0 50%; background-size: cover';}
+        if ($repeat == 0) {$xscss .= ' no-repeat 0 50%; background-size: cover; background-attachment: fixed';}
         $xscss .= ';}';
 	}
     if ($login_bg_type == 3) {
@@ -435,7 +436,7 @@ function theme_lambda2_get_extra_scss($theme) {
     }
 
     if($theme->settings->fp_no_page_header) {
-        $xscss .= '.course-1.path-mod-page, .course-1.path-mod-book {.page-header-headings h1.h2 {display: none;} #page-header.header-maxwidth .mr-auto {margin-top: 1rem !important; margin-bottom: 1rem !important;}} .course-1.path-mod-page.notloggedin #lambda-incourse-header .d-flex.align-items-center, .course-1.path-mod-book.notloggedin #lambda-incourse-header .d-flex.align-items-center {display: block !important;} .course-1.path-mod-page .page-context-header, .course-1.path-mod-book .page-context-header {display: inline;}';
+        $xscss .= '.course-1.path-mod-page, .course-1.path-mod-book {#lambda-incourse-header {padding: 1rem 0;} #lambda-incourse-header #page-header {display: none;}}';
     }
 
     if($theme->settings->footerlinkcolor == '1') {
@@ -474,7 +475,7 @@ function theme_lambda2_get_extra_scss($theme) {
     if($theme->settings->home_button == 2) {
         $xscss .= '.lambda-nav .moremenu .navbar-nav li[data-key="home"]>a::before, .lambda-search-bar i.lambda {background-color: '.$iconsbg.' !important;}';
     }
-    $xscss .= '.lambda-search-bar:focus-within #lambda-navbarsearch-form, .navbar .editmode-switch-form .custom-control-label::before {background-color: '.$iconsbg.';}';
+    $xscss .= '.lambda-search-bar:focus-within #lambda-navbarsearch-form, .navbar .editmode-switch-form .form-check.form-switch .form-check-label:before {background-color: '.$iconsbg.';}';
     $xscss .= '.userinitials {background-color: '.$userinitialsbg.';}';
 
     $pagecolor = $theme->settings->page_bg_color;
@@ -534,11 +535,6 @@ function theme_lambda2_set_fontface($scss, $google_fonts, $font_heading, $font_b
         if ($font_heading_src != '') {$replacement .= '@font-face {font-family: "custom_heading_font"; src: '.$font_heading_src.';}';}
         if ($font_body_src != '') {$replacement .= ' @font-face {font-family: "custom_body_font"; src: '.$font_body_src.';}';}
     }
-    $scss = str_replace($tag, $replacement, $scss);
-
-    $tag = '[[setting:fontawesome]]';
-	$replacement = 'FontAwesome';
-    if ($CFG->version >= 2023042400) {$replacement = '"Font Awesome 6 Free"';}
     $scss = str_replace($tag, $replacement, $scss);
 
     return $scss;
@@ -622,18 +618,10 @@ function theme_lambda2_get_pagetype() {
 
 function theme_lambda2_get_moodle_version() {
     global $CFG;
-    if ($CFG->version >= 2024100700) {
-        return 'm-45';
-    } else if ($CFG->version >= 2024042200) {
-        return 'm-44';
-    } else if ($CFG->version >= 2023100900) {
-        return 'm-43';
-    } else if ($CFG->version >= 2023042400) {
-        return 'm-42';
-    } else if ($CFG->version >= 2022112800) {
-        return 'm-41';
+    if ($CFG->version >= 2025041400) {
+        return 'm-50';
     } else {
-        return 'm-40';
+        return 'm-dev';
     }
 }
 

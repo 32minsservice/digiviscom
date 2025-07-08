@@ -250,7 +250,7 @@ class course_renderer extends \core_course_renderer {
         if (isset($parts['query'])) {
             parse_str($parts['query'], $queryParameters);
             if (isset($queryParameters['categoryid'])) {
-                $catid = intval($queryParameters['categoryid']);
+                $catid = $queryParameters['categoryid'];
             }
             if (isset($queryParameters['page'])) {
                 $page = intval($queryParameters['page']);
@@ -273,17 +273,12 @@ class course_renderer extends \core_course_renderer {
         $numcourses = count($courses);
         if($numcourses > $perpage) {
             $pages = ceil($numcourses / $perpage);
-            $paginurl = new moodle_url('/course/index.php', array(
-                'categoryid' => $catid,
-                'browse' => 'courses',
-                'perpage' => $perpage,
-                'page' => $page
-            ));
+            $paginurl = $CFG->wwwroot.'/course/index.php?categoryid='.$catid.'&amp;browse=courses&amp;perpage='.$perpage.'&amp;page=';
             $pagination .= '<nav aria-label="Page" class="pagination pagination-centered justify-content-center"><ul class="mt-1 pagination " data-page-size="'.$perpage.'">';
             if ($page != 1) {
                 $prev = $page - 1;
                 $pagination .= '<li class="page-item" data-page-number="'.$prev.'">
-                <a href="'.substr($paginurl, 0, -1).$prev.'" class="page-link" aria-label="Previous page">
+                <a href="'.$paginurl.$prev.'" class="page-link" aria-label="Previous page">
                     <span aria-hidden="true"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
                     <span class="sr-only">Previous page</span>
                 </a>
@@ -291,12 +286,7 @@ class course_renderer extends \core_course_renderer {
             }
             for ($i = 1; $i <= $pages; $i++) {
                 $active = '';
-                $paginurl = new moodle_url('/course/index.php', array(
-                    'categoryid' => $catid,
-                    'browse' => 'courses',
-                    'perpage' => $perpage,
-                    'page' => $page
-                ));
+                $paginurl = $CFG->wwwroot.'/course/index.php?categoryid='.$catid.'&amp;browse=courses&amp;perpage='.$perpage.'&amp;page=';
                 if ($page > 1 && $page == $i) {
                     $active = 'active';
                 }
@@ -311,12 +301,12 @@ class course_renderer extends \core_course_renderer {
                     $current = '<span class="sr-only">(current)</span>';
                 }
                 $pagination .= '<li class="page-item '.$active.'" data-page-number="'.$i.'">';
-                $pagination .= '<a href="'.substr($paginurl, 0, -1).$i.'" class="page-link">'.$i.$current.'</a></li>';
+                $pagination .= '<a href="'.$paginurl.$i.'" class="page-link">'.$i.$current.'</a></li>';
             }
             if ($page <  $pages) {
                 $next = $page + 1;
                 $pagination .= '<li class="page-item" data-page-number="'.$next.'">
-                <a href="'.substr($paginurl, 0, -1).$next.'" class="page-link" aria-label="Next page">
+                <a href="'.$paginurl.$next.'" class="page-link" aria-label="Next page">
                     <span aria-hidden="true"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                     <span class="sr-only">Next page</span>
                 </a>

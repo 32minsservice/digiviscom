@@ -17,7 +17,7 @@
 /**
  *
  * @package   theme_lambda2
- * @copyright 2024 redPIthemes
+ * @copyright 2025 redPIthemes
  *
  */
 
@@ -158,14 +158,6 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-    
-	$name = 'theme_lambda2/favicon';
-	$title = get_string ('favicon', 'theme_lambda2');
-	$description = get_string ('favicondesc', 'theme_lambda2');
-    $opts = array('accepted_types' => array('.png', '.jpg', '.ico'), 'maxfiles' => 1);
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon', 0, $opts);
-	$setting->set_updatedcallback ('theme_reset_all_caches');
-	$page->add($setting);
 	
 	// Course UI
 	$name = 'theme_lambda2/general_course_ui';
@@ -208,27 +200,15 @@ if ($ADMIN->fulltree) {
     $title = get_string('activity_icons', 'theme_lambda2');
     $description = get_string('activity_icons_desc', 'theme_lambda2');
     $default = '0';
-    if ($CFG->version >= 2024042200) {
-        $choices = array(
-            '0' => get_string('activity_icons_1', 'theme_lambda2'),
-            '7' => get_string('activity_icons_8', 'theme_lambda2'),
-            '2' => get_string('activity_icons_3', 'theme_lambda2'),
-            '3' => get_string('activity_icons_4', 'theme_lambda2'),
-            '4' => get_string('activity_icons_5', 'theme_lambda2'),
-            '5' => get_string('activity_icons_6', 'theme_lambda2'),
-            '6' => get_string('activity_icons_7', 'theme_lambda2')
-        );
-    } else {
-        $choices = array(
-            '0' => get_string('activity_icons_1', 'theme_lambda2'),
-            '7' => get_string('activity_icons_9', 'theme_lambda2'),
-            '2' => get_string('activity_icons_3', 'theme_lambda2'),
-            '3' => get_string('activity_icons_4', 'theme_lambda2'),
-            '4' => get_string('activity_icons_5', 'theme_lambda2'),
-            '5' => get_string('activity_icons_6', 'theme_lambda2'),
-            '6' => get_string('activity_icons_7', 'theme_lambda2')
-        );
-    }
+    $choices = array(
+        '0' => get_string('activity_icons_1', 'theme_lambda2'),
+        '7' => get_string('activity_icons_8', 'theme_lambda2'),
+        '2' => get_string('activity_icons_3', 'theme_lambda2'),
+        '3' => get_string('activity_icons_4', 'theme_lambda2'),
+        '4' => get_string('activity_icons_5', 'theme_lambda2'),
+        '5' => get_string('activity_icons_6', 'theme_lambda2'),
+        '6' => get_string('activity_icons_7', 'theme_lambda2')
+    );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -1560,6 +1540,13 @@ if ($ADMIN->fulltree) {
     $description = get_string('customscssdesc', 'theme_lambda2');
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $name = 'theme_lambda2/bs4converter';
+    $title = get_string('bs4converter', 'theme_lambda2');
+    $description = get_string('bs4converter_desc', 'theme_lambda2');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 	

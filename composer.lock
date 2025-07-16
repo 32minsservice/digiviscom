@@ -349,6 +349,7 @@
                 "issues": "https://github.com/Behat/Transliterator/issues",
                 "source": "https://github.com/Behat/Transliterator/tree/v1.5.0"
             },
+
             "abandoned": true,
             "time": "2022-03-30T09:27:43+00:00"
         },
@@ -4676,7 +4677,11 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
+<<<<<<< HEAD
     "stability-flags": [],
+=======
+    "stability-flags": {},
+>>>>>>> 289e2243416a6efa6cdc3688f11bea37ffc324bd
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -4701,6 +4706,11 @@
         "ext-fileinfo": "*",
         "ext-sodium": "*"
     },
+<<<<<<< HEAD
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
+=======
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+>>>>>>> 289e2243416a6efa6cdc3688f11bea37ffc324bd
 }

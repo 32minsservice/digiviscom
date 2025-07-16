@@ -4706,11 +4706,60 @@
         "ext-fileinfo": "*",
         "ext-sodium": "*"
     },
-<<<<<<< HEAD
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
 =======
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
->>>>>>> 289e2243416a6efa6cdc3688f11bea37ffc324bd
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
